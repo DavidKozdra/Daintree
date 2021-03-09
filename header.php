@@ -8,7 +8,7 @@
 
 <style>
 /* extra specific style code for links and active header */
-.active {
+.actve {
         text-decoration: underline;
 }
 
