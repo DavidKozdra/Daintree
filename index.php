@@ -53,31 +53,32 @@
 
         <?php
 
-        /*
-        //This code loads every asset from the database  
+
         require("Config.php");
         echo "test";
 
-        $res = $db->query('SELECT * FROM Assets');
-        while ($row = $res->fetchArray()) {
+        $res = $db->query('SELECT * FROM catalog ');
+
+
+        if ($res !== false && $res->num_rows > 0) {
+            while ($row = mysqli_fetch_assoc($res)) {
+                /*
             if ($row['asset_extention'] == "png" || $row['asset_extention'] == "jpg") {
 
                 //$data = base64_encode($row['FileContent']);
                 $file_parts = pathinfo($filename);
                 echo "<div class='p2'  > " . $row['FileName'] . " <img class='poster' src ='image.php?id=" . $row['asset_id'] . "'/> " . $row[''] . " "  . $row[''] . "<br/>" . "<a class='p2' href= 'image.php?id=" . $row['asset_id'] . "'  download  > Download </a>" . " </div>";
-            } else if ($row['asset_extention'] == "wav" || $row['asset_extention'] == "mp3" || $row['asset_extention'] == "ogg") {
-                $data = base64_encode($row['FileContent']);
-
-                echo " <audio controls> <source src= \"data:audio/mpeg;base64," . $data . "\" type='audio/" . $row['asset_extention'] . "' /> </audio>";
-                echo "\n";
             } else {
 
                 echo "<p> " . $row['FileContent'] . " </p>";
             }
-
+ 
             echo "\n";
+            */
+            }
         }
-        */
+
+        $db->close();
 
         ?>
 

@@ -1,5 +1,16 @@
 <?php
 // connects to the sqlite file use command sqlite3 filename to edit tables
-$db = new SQLite3('PolyAsset.sqlite');
+$servername = "localhost";
+$username = "pma";
+$password = "";
 
-?>
+// Create connection
+
+$db = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
+
+echo "Connected successfully";

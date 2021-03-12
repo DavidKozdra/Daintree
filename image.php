@@ -3,7 +3,7 @@
 
 require("Config.php");
 $id = $_GET['id'];
-$ImageFile = $db->querySingle('SELECT FileContent FROM Assets Where asset_id ='.$id);
+$ImageFile = $db->query('SELECT FileContent FROM Assets Where asset_id ='.$id);
 header('Content-Type: image/jpeg');
 readfile($ImageFile);
 if($ImageFile){
@@ -11,27 +11,3 @@ if($ImageFile){
 }else{
 	echo ":(";
 }
-?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
