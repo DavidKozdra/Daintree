@@ -1,14 +1,13 @@
 :root {
         --Custom-color: #198754;
         --Main-bg-color: #EDEDED;
-        --Secoundary-bg-color: #9824D1;
+        --Secoundary-bg-color: #F69744;
         --Main-txt-color: black;
         --Link-txt-color: blue;
-
-        
+   
     }
 * {
-   color::white;
+   color:white;
    box-sizing: border-box;
  }
 
@@ -53,14 +52,14 @@ form.example::after {
 h1{
 	text-align: center;
 	font-size:40px;
-	font-color:var(--Main-txt-color);
+	color:var(--Main-txt-color);
 }
 .nav-item{
 	font-size:50px;
 	margin:30px;
 }     
     nav {
-	background: #c634e3;
+	background:var(--Secoundary-bg-color);
         position: fixed;
     }
     p{
@@ -76,7 +75,7 @@ h1{
         padding: 120px;
         width: 100%;
         max-width: 2000px;
-        background-color:var(--Main-bg-color);
+        background-color:var(--Secoundary-bg-color);
         margin-top: 30px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -150,7 +149,7 @@ height:100px;
   height:60%;
   bottom: 10px;
   left: 100%;
-  background-color:#7851a9 ;
+  background-color:var(--Secoundary-bg-color) ;
   padding:40px;
   position: sticky;
 }
