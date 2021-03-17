@@ -55,29 +55,17 @@
 
 
         require("Config.php");
-        echo "test";
-
-        $res = $db->query('SELECT * FROM Cart where user_id = $current_user');
-
-
-        if ($res !== false && $res->num_rows > 0) {
-            while ($row = mysqli_fetch_assoc($res)) {
-                /*
-            if ($row['asset_extention'] == "png" || $row['asset_extention'] == "jpg") {
-
-                //$data = base64_encode($row['FileContent']);
-                $file_parts = pathinfo($filename);
-                echo "<div class='p2'  > " . $row['FileName'] . " <img class='poster' src ='image.php?id=" . $row['asset_id'] . "'/> " . $row[''] . " "  . $row[''] . "<br/>" . "<a class='p2' href= 'image.php?id=" . $row['asset_id'] . "'  download  > Download </a>" . " </div>";
-            } else {
-
-                echo "<p> " . $row['FileContent'] . " </p>";
+        $sql = "'SELECT * FROM Cart where user_id = $current_user'";
+        $result = $db->query($sql) or die($db->error);
+        echo "number of rows: " . $result->num_rows;
+        if ($result !== false && $result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "  <div>   <div>";
             }
- 
-            echo "\n";
-            */
-            }
+        } else {
+            echo "0 results";
         }
-
         $db->close();
 
         ?>

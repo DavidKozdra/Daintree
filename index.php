@@ -52,17 +52,21 @@
     <div>
 
         <?php
-
-
         require("Config.php");
-        echo "test";
 
-        $res = $db->query('SELECT * FROM catalog ');
-
-
-        if ($res !== false && $res->num_rows > 0) {
-            while ($row = mysqli_fetch_assoc($res)) {
-                /*
+        $sql = "SELECT * FROM catalog";
+        $result = $db->query($sql) or die($db->error);
+        echo "number of rows: " . $result->num_rows;
+        if ($result !== false && $result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "  <div>   <div>";
+            }
+        } else {
+            echo "0 results";
+        }
+        $db->close();
+        /*
             if ($row['asset_extention'] == "png" || $row['asset_extention'] == "jpg") {
 
                 //$data = base64_encode($row['FileContent']);
@@ -75,12 +79,9 @@
  
             echo "\n";
             */
-            }
-        }
-
-        $db->close();
-
         ?>
+
+
 
     </div>
 

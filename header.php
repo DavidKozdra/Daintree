@@ -38,7 +38,7 @@ require("Dependencies.php");
 
 <!--bootstrap navbar -->
 <nav class="navbar sticky-top navbar-expand-lg" style="background-color:#2196F3 ">
-    <a href="index.php"><img class="navbar-brand" src="https://floridapoly.edu/_resources/assets/icons/svg/logo.svg"></img></a>
+    <a href="index.php"><img class="navbar-brand" src=""></img></a>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <a class="nav-item " href="index.php">Home</a>
