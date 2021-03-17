@@ -38,7 +38,7 @@
     </div>
 
 
-    <form action="/action_page.php" method="get">
+    <form action="/verification.php" method="get">
         <!-- Needs to work with some page -->
         <div class="boxed">
             Fill in all forms with a * to complete registration. <br>

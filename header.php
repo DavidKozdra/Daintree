@@ -7,7 +7,7 @@ require("Dependencies.php");
 
 <style>
     /* extra specific style code for links and active header */
-    .actve {
+    .active {
         text-decoration: underline;
     }
 
@@ -42,8 +42,9 @@ require("Dependencies.php");
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <a class="nav-item " href="index.php">Home</a>
-            <a class="nav-item " href="About.php">About</a>
-            <a class="nav-item " href="Contribute.php">Contribute</a>
+            <a class="nav-item " href="Useritems.php">Selling</a>
+            <a class="nav-item " href="Cart.php">Cart</a>
+            <a class="nav-item " href="login.php">Logout</a>
         </ul>
 
     </div>

@@ -57,7 +57,7 @@
         require("Config.php");
         echo "test";
 
-        $res = $db->query('SELECT * FROM catalog ');
+        $res = $db->query('SELECT * FROM Cart where user_id = $current_user');
 
 
         if ($res !== false && $res->num_rows > 0) {

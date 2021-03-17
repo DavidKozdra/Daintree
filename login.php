@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 
     <style>
         .banner {
@@ -36,7 +36,7 @@
     <div class="banner">
         <h2>Log into Daintree!</h2>
     </div>
-    <form action="/action_page.php" method="get">
+    <form action="/verification.php" method="get">
         <!-- Needs to work with some page -->
         <div class="boxed">
             Email: <input type="text" value="realdude@legitdomain.com" /> <br>
