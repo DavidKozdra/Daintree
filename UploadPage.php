@@ -35,7 +35,8 @@ if (file_exists($path_filename_ext)) {
 
     <?php
 
-    require("Config.php");
+    require("Depend\Config.php");
+
     /*
     //Create
     $FileName = $_FILES["FileName"]["name"]; //fix this what is the file name 

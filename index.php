@@ -52,7 +52,7 @@
     <div>
 
         <?php
-        require("Config.php");
+        require("Depend\Config.php");
 
         $sql = "SELECT * FROM catalog";
         $result = $db->query($sql) or die($db->error);
@@ -71,7 +71,7 @@
 
                 //$data = base64_encode($row['FileContent']);
                 $file_parts = pathinfo($filename);
-                echo "<div class='p2'  > " . $row['FileName'] . " <img class='poster' src ='image.php?id=" . $row['asset_id'] . "'/> " . $row[''] . " "  . $row[''] . "<br/>" . "<a class='p2' href= 'image.php?id=" . $row['asset_id'] . "'  download  > Download </a>" . " </div>";
+                echo "<div class='p2'  > " . $row['FileName'] . " <img class='poster' src ='Depend\image.php?id=" . $row['asset_id'] . "'/> " . $row[''] . " "  . $row[''] . "<br/>" . "<a class='p2' href= 'Depend\image.php?id=" . $row['asset_id'] . "'  download  > Download </a>" . " </div>";
             } else {
 
                 echo "<p> " . $row['FileContent'] . " </p>";

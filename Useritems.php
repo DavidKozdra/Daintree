@@ -54,7 +54,7 @@
         <?php
 
 
-        require("Config.php");
+        require("Depend\Config.php");
         echo "test";
         //this is broken as there is no current user defined yet
         $res = $db->query('SELECT * FROM catalog where user_id = $current_user');

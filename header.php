@@ -2,7 +2,7 @@
 //This page adds the nav bar and search bar to every page
 
 //add bootstrap and extra crap
-require("Dependencies.php");
+require("Depend\Dependencies.php");
 ?>
 
 <style>
@@ -23,6 +23,7 @@ require("Dependencies.php");
 
 <script>
     //code to add undreline to current item
+    /*
     $(document).ready(function() {
         var url = window.location.href;
         let me = $('ul a');
@@ -34,6 +35,7 @@ require("Dependencies.php");
         });
         //minimal changes to your co
     });
+    */
 </script>
 
 <!--bootstrap navbar -->
@@ -44,7 +46,7 @@ require("Dependencies.php");
             <a class="nav-item " href="index.php">Home</a>
             <a class="nav-item " href="Useritems.php">Selling</a>
             <a class="nav-item " href="Cart.php">Cart</a>
-            <a class="nav-item " href="login.php">Logout</a>
+            <a class="nav-item " href="Login\login.php">Logout</a>
         </ul>
 
     </div>
