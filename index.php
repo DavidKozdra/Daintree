@@ -53,7 +53,7 @@
 
         <?php
         require("Depend\Config.php");
-
+        //echo $_SESSION['username'];
         $sql = "SELECT * FROM catalog";
         $result = $db->query($sql) or die($db->error);
         echo "number of rows: " . $result->num_rows;
@@ -65,7 +65,7 @@
         } else {
             echo "0 results";
         }
-        $db->close();
+       // $db->close();
         /*
             if ($row['asset_extention'] == "png" || $row['asset_extention'] == "jpg") {
 

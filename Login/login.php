@@ -34,8 +34,8 @@
 <body>
 
     <?php
-        session_start();
-        unset($_SESSION["current_user"]);
+        //session_start();
+        //unset($_SESSION["current_user"]);
         //unset($_SESSION["username"]);
         //header("Location:login.php");
     ?>

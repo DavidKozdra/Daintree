@@ -52,10 +52,10 @@
     <div>
 
         <?php
-
-
-        require("Config.php");
-        $sql = "'SELECT * FROM Cart where user_id = $current_user'";
+        require("Depend\Config.php");
+        $user =  $_COOKIE['current_user'];
+        echo $user;
+        $sql = " SELECT * FROM Cart where user_id = $user ";
         $result = $db->query($sql) or die($db->error);
         echo "number of rows: " . $result->num_rows;
         if ($result !== false && $result->num_rows > 0) {

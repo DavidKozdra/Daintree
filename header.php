@@ -23,19 +23,18 @@ require("Depend\Dependencies.php");
 
 <script>
     //code to add undreline to current item
-    /*
+
     $(document).ready(function() {
         var url = window.location.href;
         let me = $('ul a');
         //using jquery map
-        $(me).map(function(idx, elem) {
+        $(me).map(function(id, elem) {
             if (url.includes($(elem).attr("href"))) {
                 $(elem).addClass("active");
             }
         });
         //minimal changes to your co
     });
-    */
 </script>
 
 <!--bootstrap navbar -->
