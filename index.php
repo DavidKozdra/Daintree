@@ -60,7 +60,7 @@
         if ($result !== false && $result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "  <div>   <div>";
+                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['Item_id'] . "'/>  <button > ADD to Cart</button> </div>";
             }
         } else {
             echo "0 results";
