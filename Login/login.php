@@ -33,10 +33,17 @@
 
 <body>
 
+    <?php
+        session_start();
+        unset($_SESSION["current_user"]);
+        //unset($_SESSION["username"]);
+        //header("Location:login.php");
+    ?>
+
     <div class="banner">
         <h2>Log into Daintree!</h2>
     </div>
-    <form action="Verification.php" method="post">
+    <form action="loginprocess.php" method="post">
         <!-- Needs to work with some page -->
         <div class="boxed">
             Email: <input type="email" value="realdude@legitdomain.com" name="email" /> <br>
