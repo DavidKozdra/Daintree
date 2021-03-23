@@ -56,25 +56,14 @@
 
         require("Depend\Config.php");
         echo "test";
-        //this is broken as there is no current user defined yet
-        $res = $db->query('SELECT * FROM catalog where user_id = $current_user');
+        $user =  $_COOKIE['current_user'];
+        echo $user;
+        $sql = " SELECT * FROM Catalog where user_id = $user ";
 
-
+        $res = $db->query($sql) or die($db->error);
         if ($res !== false && $res->num_rows > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
-                /*
-            if ($row['asset_extention'] == "png" || $row['asset_extention'] == "jpg") {
-
-                //$data = base64_encode($row['FileContent']);
-                $file_parts = pathinfo($filename);
-                echo "<div class='p2'  > " . $row['FileName'] . " <img class='poster' src ='image.php?id=" . $row['asset_id'] . "'/> " . $row[''] . " "  . $row[''] . "<br/>" . "<a class='p2' href= 'image.php?id=" . $row['asset_id'] . "'  download  > Download </a>" . " </div>";
-            } else {
-
-                echo "<p> " . $row['FileContent'] . " </p>";
-            }
- 
-            echo "\n";
-            */
+                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['Item_id'] . "'/>  <button id = 'cart'> Remove </button> </div>";
             }
         }
 

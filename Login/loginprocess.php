@@ -7,7 +7,9 @@
     $result = $db->query($sql) or die('<div><br><br> <h><b>Error</b> </h> <p>User not found</p> <a src = "login.php"> GO BACK </a></div>');
     $row = $result->fetch_assoc();
     setcookie("current_user", $row['user_id'], time() + (86400 * 30), "/"); //says value null?
-
+    setcookie("username", $row['username'], time() + (86400 * 30), "/"); //says value null?
+    setcookie("user_password", $row['password'], time() + (86400 * 30), "/"); //says value null?
+    
     if($result->num_rows > 0){
         header("Location:..\index.php");
     }else{
