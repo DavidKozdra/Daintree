@@ -61,7 +61,9 @@
         if ($result !== false && $result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['Item_id'] . "'/>  <button id = 'cart'> Remove from Cart</button> </div>";
+                var_dump($row);
+                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['item_id'] . "'/> 
+                <a href='RemoveFromCart.php?id=" . $row['item_id'] ."'><button id = 'cart'> Remove From Cart </button> </a> </div>";
             }
         } else {
             echo "0 results";

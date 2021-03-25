@@ -60,25 +60,13 @@
         if ($result !== false && $result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['Item_id'] . "'/>  <button id = 'cart'> ADD to Cart</button> </div>";
+                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['Item_id'] . "'/> 
+                <a href='AddToCart.php?id=" . $row['Item_id'] ."'><button id = 'cart'> ADD to Cart </button> </a> </div>";
             }
         } else {
             echo "0 results";
         }
-       // $db->close();
-        /*
-            if ($row['asset_extention'] == "png" || $row['asset_extention'] == "jpg") {
 
-                //$data = base64_encode($row['FileContent']);
-                $file_parts = pathinfo($filename);
-                echo "<div class='p2'  > " . $row['FileName'] . " <img class='poster' src ='Depend\image.php?id=" . $row['asset_id'] . "'/> " . $row[''] . " "  . $row[''] . "<br/>" . "<a class='p2' href= 'Depend\image.php?id=" . $row['asset_id'] . "'  download  > Download </a>" . " </div>";
-            } else {
-
-                echo "<p> " . $row['FileContent'] . " </p>";
-            }
- 
-            echo "\n";
-            */
         ?>
 
 

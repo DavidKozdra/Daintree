@@ -3,7 +3,16 @@
 
 //add bootstrap and extra crap
 require("Depend\Dependencies.php");
+require("Depend\Config.php");
+        //echo $_SESSION['username'];
+$user =  $_COOKIE['current_user'];
+$username =  $_COOKIE['username'];
+$sql = " SELECT * FROM Cart where user_id = $user ";
+$result = $db->query($sql) or die($db->error);
+        
 ?>
+
+
 
 <style>
     /* extra specific style code for links and active header */
@@ -44,10 +53,12 @@ require("Depend\Dependencies.php");
         <ul class="navbar-nav">
             <a class="nav-item " href="index.php">Home</a>
             <a class="nav-item " href="Useritems.php">Selling</a>
-            <a class="nav-item " href="Cart.php">Cart</a>
+            <a class="nav-item " href="Cart.php">Cart (<?=$result->num_rows;?>) </a>
             <a class="nav-item " href="Login\login.php">Logout</a>
+            
         </ul>
-
+        <?=$username;?>
+        
     </div>
 </nav>
 <div>
