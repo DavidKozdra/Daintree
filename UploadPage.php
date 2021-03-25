@@ -37,33 +37,29 @@ if (file_exists($path_filename_ext)) {
 
     require("Depend\Config.php");
     $user =  $_COOKIE['current_user'];
-    $User_name =  $_COOKIE['username'];
+    $User_name = $_COOKIE['username'];
     echo $user;
     $FileName = $_FILES["FileName"]["name"]; //fix this what is the file name 
-    $File = file_get_contents($_FILES["FileName"]["tmp_name"]);
+    $desc = $_POST['Description'];
     //var_dump($File);
     echo "Extention:" . strtolower(pathinfo($FileName, PATHINFO_EXTENSION)) . "\n";
     $Extention = strtolower(pathinfo($FileName, PATHINFO_EXTENSION));
     //$date = date('Y-m-d H:i:s');
     $whitelist = array("jpg", "png");
     if (in_array($Extention, $whitelist)) {
-        $sql = "INSERT INTO Catalog ( Image,Name,Description,Price,FileContent,user_id ) VALUES (:filecontent, '$UserName','item description ','1','$user')";
-        //var_dump($sql);    
-        $query = $db->prepare($sql);
+        $image = addslashes(file_get_contents($_FILES["FileName"]["tmp_name"]));
+        //you keep your column name setting for insertion. I keep image type Blob.
+        
+        $sql = "INSERT INTO catalog (Image,Name,Description,Price,user_id) VALUES ('$image', '$FileName','$desc','1','$user')";
+     //   $query = "INSERT INTO products (id,image) VALUES('','$image')";
+        var_dump($db->query($sql));
 
-        $query->bindParam(':filecontent', $File, SQLITE3_BLOB);
-        if ($query->execute()) {
-            //        	 	var_dump($File);
-            echo "New record created successfully";
-        } else {
-            echo "Error: :( check the file type so sorry friend" . $sql;
-            // $db->lastErrorCode() . $db->lastErrorMsg() 
-        }
+        //$db->query($sql);
     } else {
         echo "sorry $FileName file type not yet supported contact david kozdra to add more file types";
     }
-    sleep ( 12 );
-    header("Location:..\index.php");
+    //sleep ( 3 );
+    //header("Location:Useritems.php");
     ?>
 
     

@@ -54,7 +54,7 @@
         <?php
         require("Depend\Config.php");
         //echo $_SESSION['username'];
-        $sql = "SELECT * FROM catalog";
+        $sql = "SELECT * FROM catalog Order by item_id Desc";
         $result = $db->query($sql) or die($db->error);
         echo "number of rows: " . $result->num_rows;
         if ($result !== false && $result->num_rows > 0) {
