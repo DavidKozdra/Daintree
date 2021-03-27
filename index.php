@@ -54,13 +54,14 @@
         <?php
         require("Depend\Config.php");
         //echo $_SESSION['username'];
-        $sql = "SELECT * FROM catalog Order by item_id Desc";
+        $user =  $_COOKIE['current_user'];
+        $sql = "SELECT * FROM catalog where user_id != $user Order by item_id Desc";
         $result = $db->query($sql) or die($db->error);
         echo "number of rows: " . $result->num_rows;
         if ($result !== false && $result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['Item_id'] . "'/> 
+                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['Item_id'] . "'/>
                 <a href='AddToCart.php?id=" . $row['Item_id'] ."'><button id = 'cart'> ADD to Cart </button> </a> </div>";
             }
         } else {

@@ -7,7 +7,9 @@
 
 
 <body>
+<?php
 
+?>
 
 <?php
 
@@ -16,11 +18,16 @@
     $User_name = $_COOKIE['username'];
     $id = $_GET['id'];
     echo $user;
-    
-    $sql = "INSERT INTO cart (Item_id,user_id) VALUES ('$id','$user')";
+    //you keep your column name setting for insertion. I keep image type Blob.
+
+    $sql = "Delete From cart where Item_id = $id Limit 1";
+    //   $query = "INSERT INTO products (id,image) VALUES('','$image')";
     var_dump($db->query($sql));
 
-    header("Location:index.php");
+    //$db->query($sql);
+
+    //sleep ( 3 );
+    header("Location:Cart.php");
 ?>
 
 

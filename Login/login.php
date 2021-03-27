@@ -33,12 +33,6 @@
 
 <body>
 
-    <?php
-        //session_start();
-        //unset($_SESSION["current_user"]);
-        //unset($_SESSION["username"]);
-        //header("Location:login.php");
-    ?>
 
     <div class="banner">
         <h2>Log into Daintree!</h2>
@@ -46,8 +40,8 @@
     <form action="loginprocess.php" method="post">
         <!-- Needs to work with some page -->
         <div class="boxed">
-            Email: <input type="email" value="realdude@legitdomain.com" name="email" /> <br>
-            Password: <input type="password" value="Password" name="password" /> <br>
+            Email: <input type="email" value="" name="email" /> <br>
+            Password: <input type="password" value="" name="password" /> <br>
             <input type="submit"> <br>
             <a href='register.php'>Register</a> <br> <!-- Link to register-->
             <a href='forgotpass.php'>Forgot password?</a> <!-- Link to forgot password-->

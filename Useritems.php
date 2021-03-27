@@ -75,26 +75,19 @@
 
 
     <div class="position-sticky" style="height:60%" id="side-panel">
-        <svg xmlns="http://www.w3.org/2000/svg" style=" float: left" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-        </svg>
-
         <h3> Upload Your Own </h3>
         <form action="UploadPage.php" method="post" enctype="multipart/form-data">
             <div id="panel">
                 <h2> Select image to upload:</h2>
                 <div class="form-group">
-                    <label for="nametext">Artrst Name</label>
-                    <input name="ArtstName" type="text" class="form-control" id="nametext" placeholder="Enter Name">
+                    <label for="nametext">Price</label>
+                    <input name="Price" type="text" class="form-control" id="nametext" placeholder="Enter Price ...">
 
                     <label for="nametext">Description </label>
-                    <input name="Description" type="text" class="form-control" placeholder="This asset">
-
-
+                    <input name="Description" type="text" class="form-control" placeholder="This item ...">
                 </div>
                 <input type="file" name="FileName" id="fileToUpload" />
                 <input class="p2" type="submit" value="Upload" name="submit" />
-
         </form>
     </div>
 
