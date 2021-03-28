@@ -80,6 +80,10 @@
             <div id="panel">
                 <h2> Select image to upload:</h2>
                 <div class="form-group">
+
+                    <label for="nametext">Name</label>
+                    <input name="Name" type="text" class="form-control" id="nametext" placeholder="Enter Name ...">
+
                     <label for="nametext">Price</label>
                     <input name="Price" type="text" class="form-control" id="nametext" placeholder="Enter Price ...">
 

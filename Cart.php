@@ -55,24 +55,41 @@
         require("Depend\Config.php");
         $user =  $_COOKIE['current_user'];
         echo $user;
-        $sql = " SELECT * FROM Cart where user_id = $user ";
+
+
+        $sql = "SELECT item_id FROM cart WHERE user_id = $user";
+        //$sql = "SELECT * FROM  catalog WHERE item_id = (SELECT item_id FROM cart where user_id = $user LIMIT 1)";
+        //Cannot do sum unless we get this ^ 
+
         $result = $db->query($sql) or die($db->error);
-        echo "number of rows: " . $result->num_rows;
+        //echo "number of rows: " . $result->num_rows;
+        echo "<a href='Removeallfromcart.php'><button id = 'button'> Checkout </button> </a> </div>";
+
         if ($result !== false && $result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
                 var_dump($row);
                 echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['item_id'] . "'/> 
-                <a href='RemoveFromCart.php?id=" . $row['item_id'] ."'><button id = 'cart'> Remove From Cart </button> </a> </div>";
+
+                <p>" . $row['Name'] . "</p>
+                <p>" . $row['Price'] . "</p>
+
+                <a href='RemoveFromCart.php?id=" . $row['item_id'] . "'><button id = 'cart'> Remove From Cart </button> </a> </div>";
             }
         } else {
             echo "0 results";
         }
+
+
+
+
         $db->close();
 
         ?>
 
     </div>
+
+
 
 </body>
 
