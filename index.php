@@ -61,6 +61,8 @@
         <?php
         require("Depend\Config.php");
         //echo $_SESSION['username'];
+        session_start();
+        $_SESSION['current_page']='catalog';
         $user =  $_COOKIE['current_user'];
         $sql = "SELECT * FROM catalog where user_id != $user Order by item_id Desc";
         $result = $db->query($sql) or die($db->error);

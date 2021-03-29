@@ -1,5 +1,5 @@
 <?php
-require("D:\\xampp\htdocs\DainTree\Depend\Config.php"); // mysql connection
+require("C:\\xampp\htdocs\DainTree\Depend\Config.php"); // mysql connection
 
 //form data
 $email = $_POST["email"];

@@ -10,21 +10,31 @@
 
     <?php
     echo require("header.php");
-    require("Config.php");
+    require("Depend\Config.php");
     $Search = $_POST['search'];
-
     echo "you searched for " . $Search;
-    $res = $db->query('SELECT * FROM items
+    $sql = 'SELECT * FROM catalog
 		WHERE Name LIKE \'%' . $Search . '%.\'
    		OR Description LIKE \'%' . $Search . '%\'
-   		OR Price LIKE \'%' . $Search . '%\'');
-    if ($res !== false && $res->num_rows > 0) {
-        while ($row = mysqli_fetch_assoc($res)) {
-            //	var_dump($row);  
+   		OR Price LIKE \'%' . $Search . '%\'';
+    
+        $result = $db->query($sql) or die($db->error);
+        // echo "number of rows: " . $result->num_rows;
+        if ($result !== false && $result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
 
-            echo "\n";
-        }
-    }
+                echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['Item_id'] . "'/> 
+                 
+                 <p class='blacktext'>Name: " . $row['Name'] . "</p>
+                 <p class='blacktext'>Description: " . $row['Description'] . "</p>
+                 <p class='blacktext'>Price: " . $row['Price'] . "</p>
+
+                <a href='AddToCart.php?id=" . $row['Item_id'] . "'><button id = 'cart'> ADD to Cart </button> </a> </div>";
+            }
+        } else {
+            echo "0 results";
+        } 
 
 
     ?>

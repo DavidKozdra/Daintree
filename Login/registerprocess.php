@@ -1,6 +1,6 @@
 <?php
 
-require("D:\\xampp\htdocs\DainTree\Depend\Config.php"); //db connection
+require("C:\\xampp\htdocs\DainTree\Depend\Config.php"); //db connection
 
 //form data
 $email = $_POST["email"];
