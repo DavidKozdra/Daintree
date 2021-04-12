@@ -71,9 +71,6 @@
                 //var_dump($row);
                 echo "<div> <img class='poster' src='Depend\image.php?id=" . $row['item_id'] . "'/> 
 
-                <p>" . $row['Name'] . "</p>
-                <p>" . $row['Price'] . "</p>
-
                 <a href='RemoveFromCart.php?id=" . $row['item_id'] . "'><button id = 'cart'> Remove From Cart </button> </a> </div>";
             }
         } else {
